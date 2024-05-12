@@ -1,12 +1,12 @@
-from flask import Flask
+from flask import Flask, render_template
 
 # Create a Flask app
-app = Flask(__name__)
+app = Flask(__name__, template_folder = '.')
 
 # Define a route and its handler
 @app.route('/')
 def hello_world():
-    return 'Hello, World! This is a basic Flask web application.'
+    return render_template('index.html')
 
 # Run the Flask app
 if __name__ == '__main__':
